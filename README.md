@@ -44,13 +44,13 @@ curl http://localhost:8000/health
 Веб-интерфейс: http://localhost:8000
 API-документация (Swagger): http://localhost:8000/docs
 
-**Первый вход:** учётная запись `uitlocal` (или значение `ADMIN_USERNAME` из `.env`), пароль — `ADMIN_INITIAL_PASSWORD` из `.env`. При первом входе потребуется сменить пароль.
+**Первый вход:** учётная запись `uitrix` (или значение `ADMIN_USERNAME` из `.env`), пароль — `ADMIN_INITIAL_PASSWORD` из `.env`. При первом входе потребуется сменить пароль.
 
 ## Развёртывание на сервере
 
 Инструкция появится в `docs/deploy.md` по мере готовности инфраструктуры. Целевая конфигурация:
 
-- домен `crm.ghostnode.ru` → Nginx (TLS от Let's Encrypt) → backend-контейнер;
+- домен `crm.your_hostname` → Nginx (TLS от Let's Encrypt) → backend-контейнер;
 - PostgreSQL — только на `127.0.0.1`, не доступен извне;
 - ежедневный `pg_dump` по cron с ротацией 14 дней;
 - бэкап вложений через rsync;
